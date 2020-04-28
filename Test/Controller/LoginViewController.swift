@@ -13,7 +13,16 @@ import GoogleSignIn
 class LoginViewController: UIViewController,GIDSignInDelegate {
     
     let defaults = UserDefaults.standard
-
+    
+    let imgLogo: UIImageView = {
+        let img = UIImageView()
+        img.backgroundColor = .white
+        img.image = UIImage(named: "loginLogo")
+        img.contentMode = .scaleToFill
+        
+        return img
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +38,8 @@ class LoginViewController: UIViewController,GIDSignInDelegate {
     }
     
     
+    
+    
     func setupLogin(){
         GIDSignIn.sharedInstance().presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
@@ -37,6 +48,10 @@ class LoginViewController: UIViewController,GIDSignInDelegate {
         view.addSubview(googleButton)
         
         GIDSignIn.sharedInstance()?.delegate = self
+        
+        view.backgroundColor = .white
+        view.addSubview(imgLogo)
+        imgLogo.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: googleButton.topAnchor , right: view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 0, height: 0)
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
