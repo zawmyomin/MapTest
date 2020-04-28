@@ -13,7 +13,6 @@ target 'Test' do
   pod 'SDWebImage'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'KRProgressHUD'
-  pod 'GooglePlacesSearchController'
+  
   
 end

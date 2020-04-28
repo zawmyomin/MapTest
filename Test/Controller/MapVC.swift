@@ -12,7 +12,7 @@ import GooglePlaces
 import SDWebImage
 import GoogleSignIn
 import CoreLocation
-import GooglePlacesSearchController
+
 
 class MapVC: UIViewController{
     
